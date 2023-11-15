@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * print_integers: a function that prints integers.
+ * print_integers - a function that prints integers.
  * @i: the integer to print
  * Return: the number of chars printed
- */ 
+ */
 int print_integers(int i)
 {
 	char buff[51];
@@ -14,16 +14,15 @@ int print_integers(int i)
 	if (i < 0)
 	{
 		sign = -1;
-		i = -i;
 	}
 
 	buff[50] = '\0';
 
 	while (i != 0)
 	{
-		buff[ind] = i % 10 + '0';
+		buff[ind] = ((i % 10) * sign) + '0';
 		i /= 10;
-		ind--;	
+		ind--;
 	}
 	if (ind == 49)
 	{

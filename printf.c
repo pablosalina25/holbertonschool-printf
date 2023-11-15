@@ -40,7 +40,7 @@ int _printf(char *format, ...)
 			length++;
 		}
 		if (*ptr != '\0')
-		ptr++;
+			ptr++;
 	}
 	va_end(list);
 	return (length);

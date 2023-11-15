@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <unistd.h>
 /**
  * _printf - a function that produces output according to a format.
  * @format: the format string
@@ -10,7 +8,7 @@
 int _printf(char *format, ...)
 {
 	va_list list;
-	int length = 0;
+	int length = 0, tmp;
 	char *ptr = format;
 
 
@@ -32,7 +30,11 @@ int _printf(char *format, ...)
 		else if (*ptr == '%')
 		{
 			ptr++;
-			length += getSpecifier(*ptr, &list);
+			tmp = getSpecifier(*ptr, &list);
+			if (tmp == -1)
+				length = -1;
+			else
+				length += tmp;
 		}
 		else
 		{
@@ -76,16 +78,24 @@ int getSpecifier(char c, va_list *list)
 {
 	switch (c)
 	{
+		case 'd':
+		case 'i':
+			return (print_integers(va_arg(*list, int)));
+
 		case 'c':
 			_putc(va_arg(*list, int));
 			return (1);
+
 		case 's':
 			return (_puts(va_arg(*list, char *)));
+
 		case '%':
 			_putc('%');
 			return (1);
+
 		case '\0':
-			return (0);
+			return (-1);
+
 		default:
 			_putc('%');
 			_putc(c);

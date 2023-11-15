@@ -11,6 +11,7 @@
 int _printf(char *format, ...);
 int _puts(char *);
 void _putc(char);
+int print_integers(int);
 int getSpecifier(char c, va_list *list);
 int getEscape(char c);
 #endif

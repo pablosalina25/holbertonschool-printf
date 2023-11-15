@@ -11,7 +11,8 @@ int _puts(char *ptr)
 
 	if (ptr == NULL)
 	{
-		return (0);
+		_puts("(null)");
+		return (6);
 	}
 
 	while (*ptr)

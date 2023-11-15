@@ -39,10 +39,11 @@ int _printf(char *format, ...)
 			_putc(*ptr);
 			length++;
 		}
-
+		if (*ptr != '\0')
 		ptr++;
 	}
-	return (0);
+	va_end(list);
+	return (length);
 }
 
 
@@ -69,6 +70,7 @@ int getEscape(char c)
  * getSpecifier - handles specifiers
  * @c: the specifier
  * @list: the argument list
+ * Return: characters printed
  */
 int getSpecifier(char c, va_list *list)
 {
@@ -82,6 +84,8 @@ int getSpecifier(char c, va_list *list)
 		case '%':
 			_putc('%');
 			return (1);
+		case '\0':
+			return (0);
 		default:
 			_putc('%');
 			_putc(c);

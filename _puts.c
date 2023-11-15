@@ -16,11 +16,11 @@ int _puts(char *ptr)
 
 	while (*ptr)
 	{
- 		write(1, ptr , 1);
+		write(1, ptr, 1);
 		ptr++;
 		r++;
 	}
-	return(r);
+	return (r);
 }
 
 /**

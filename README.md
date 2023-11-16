@@ -3,7 +3,8 @@
 ## Table of Contents
 
 * [Description](#Description)
-* [Functions] (Functions)
+* [Functions](#Functions)
+* [Example](#Example)
 
 ## Description of the project
 
@@ -16,40 +17,40 @@ This project is about creating a basic version of the printf function in C. The 
 Compilation to use `_printf()` function on C.
 ```
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
-
+```
 ## Functions
 
-* _printf: This function takes as arguments a format string, and an unspecified ammount of arguments to insert according to the format. If successfull, it returns the total number of characters printed. If there is a problem during execution, it returns -1.
+* <b>_printf</b>: This function takes as arguments a format string, and an unspecified ammount of arguments to insert according to the format. If successfull, it returns the total number of characters printed. If there is a problem during execution, it returns -1.
 
-* _puts: This functions takes a string and prints it to the terminal. If the string is a null pointer, it prints "(null)". I then returns the number of characters printed.
+* <b>_puts</b>: This functions takes a string and prints it to the terminal. If the string is a null pointer, it prints "(null)". I then returns the number of characters printed.
 
-* _putc: This function takes a character and prints it to the terminal.
+* <b>_putc</b>: This function takes a character and prints it to the terminal.
 
-* print_integers: This function takes an integer and converts it to a character string, and then prints the string to the terminal
+* <b>print_integers</b>: This function takes an integer and converts it to a character string, and then prints the string to the terminal
 
-* getEscape: This functions takes a character and prints the corresponding alternative character.
+* <b>getEscape</b>: This functions takes a character and prints the corresponding alternative character.
 
-* getSpecifier: This function takes a character and an argument list, advances the list, and prints the argument as the type specified by the character. It returns the number of characters printed.
+* <b>getSpecifier</b>: This function takes a character and an argument list, advances the list, and prints the argument as the type specified by the character. It returns the number of characters printed.
 
-## Examples
+* <b>_print_binary</b>: This function takes an unsigned integer, converts it to its binary representation, and prints it.
+
+## Example
 
 Here is an example of the usage of the _printf function
 
-``` 
-
+```
 root@bd2f69d1ea08:/holbertonschool-printf# cat main.c
 #include "main.h"
 #include "printf.c"
 #include "_puts.c"
 #include "print_integers.c"
-
-/**
+ /**
  * main - Examples of _printf function
  * Return: success
  */
 int main(void)
 {
-        int len;
+       int len;
 
         len = _printf("This is a simple sentence\n");
 
@@ -65,5 +66,4 @@ This is a character: @
 This is an integer: -65536
 The length of the first sentence: 26
 root@bd2f69d1ea08:/holbertonschool-printf#
-
 ```

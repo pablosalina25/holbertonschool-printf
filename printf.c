@@ -95,6 +95,8 @@ int getSpecifier(char c, va_list *list)
 
 		case '\0':
 			return (-1);
+		case 'b':
+			return (_print_binary(va_arg(*list, int)));
 
 		default:
 			_putc('%');

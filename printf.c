@@ -88,7 +88,8 @@ int getSpecifier(char c, va_list *list)
 
 		case 's':
 			return (_puts(va_arg(*list, char *)));
-
+		case 'r':
+			return (print_reverse(va_arg(*list, char *)));
 		case '%':
 			_putc('%');
 			return (1);

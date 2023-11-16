@@ -15,4 +15,5 @@ int print_integers(int);
 int getSpecifier(char c, va_list *list);
 int getEscape(char c);
 int _print_binary(unsigned int);
+int print_reverse(char *);
 #endif

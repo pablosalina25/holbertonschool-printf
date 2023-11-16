@@ -22,7 +22,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 
 * <b>_printf</b>: This function takes as arguments a format string, and an unspecified ammount of arguments to insert according to the format. If successfull, it returns the total number of characters printed. If there is a problem during execution, it returns -1.
 
-* <b>_puts</b>: This functions takes a string and prints it to the terminal. If the string is a null pointer, it prints "(null)". I then returns the number of characters printed.
+* <b>_puts</b>: This functions takes a string and prints it to the terminal. If the string is a null pointer, it prints "(null)". It then returns the number of characters printed.
 
 * <b>_putc</b>: This function takes a character and prints it to the terminal.
 
@@ -34,6 +34,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 
 * <b>_print_binary</b>: This function takes an unsigned integer, converts it to its binary representation, and prints it.
 
+* <b>print_reverse</b>: This function takes a string and prints it to the terminal, backwards. If the string is a null pointer, it prints "(null)". It returns the number of characters printed.
 ## Example
 
 Here is an example of the usage of the _printf function
